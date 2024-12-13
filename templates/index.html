@@ -16,10 +16,17 @@
 
     <div>
         {%if short_u %}
-        <h1>{{short_u}}</h1>
-        <button>copy</button>
+        <h1 id="sh">{{short_u}}</h1>
+        <button onclick="copy_link()">copy</button>
         {% endif %}
     </div>
+
+    <script>
+        function copy_link() {
+            let copyText = document.getElementById("sh").innerText;
+            navigator.clipboard.writeText(copyText);
+        }
+    </script>
 
 </body>
 
